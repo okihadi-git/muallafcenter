@@ -148,7 +148,7 @@ export default function QuranView() {
                   {meta.englishNameTranslation} · {revelation(meta.revelationType)} · {meta.numberOfAyahs} ayat
                 </p>
               </div>
-              <p className="font-serif text-[30px]" dir="rtl">{meta.name}</p>
+              <p className="font-quran text-[30px]" dir="rtl">{meta.name}</p>
             </div>
           </div>
         )}
@@ -175,7 +175,7 @@ export default function QuranView() {
             </div>
 
             {detail.meta.number !== 1 && detail.meta.number !== 9 && (
-              <p className="mt-4 text-center font-serif text-[24px] text-forest-900" dir="rtl">بِسْمِ ٱللَّهِ ٱلرَّحْمَـٰنِ ٱلرَّحِيمِ</p>
+              <p className="mt-4 text-center font-quran text-[24px] text-forest-900" dir="rtl">بِسْمِ ٱللَّهِ ٱلرَّحْمَـٰنِ ٱلرَّحِيمِ</p>
             )}
 
             <div className="mt-4 space-y-3">
@@ -198,7 +198,7 @@ export default function QuranView() {
                         {active ? <Pause size={16} /> : <Play size={16} />}
                       </button>
                     </div>
-                    <p className="text-right font-serif text-[26px] leading-[2] text-forest-900" dir="rtl">{ayah.arab}</p>
+                    <p className="text-right font-quran text-[26px] leading-[2] text-forest-900" dir="rtl">{ayah.arab}</p>
                     <p className="mt-3 text-[13px] leading-6 text-slate-600">{ayah.translation}</p>
                   </article>
                 );
@@ -249,7 +249,7 @@ export default function QuranView() {
               <span className="block text-[13px] font-semibold text-forest-900">{s.englishName}</span>
               <span className="mt-0.5 block text-[11px] text-slate-400">{s.englishNameTranslation} · {s.numberOfAyahs} ayat · {revelation(s.revelationType)}</span>
             </span>
-            <span className="font-serif text-[20px] text-forest-800" dir="rtl">{s.name}</span>
+            <span className="font-quran text-[20px] text-forest-800" dir="rtl">{s.name}</span>
           </button>
         ))}
       </div>
