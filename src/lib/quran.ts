@@ -15,11 +15,12 @@ export type Ayah = {
   arab: string;
   translation: string;
   audio: string;
+  juz?: number;
 };
 
 export type SurahDetail = { meta: SurahMeta; ayahs: Ayah[] };
 
-type RawAyah = { number: number; numberInSurah: number; text: string; audio?: string };
+type RawAyah = { number: number; numberInSurah: number; text: string; audio?: string; juz?: number };
 type RawEdition = SurahMeta & { ayahs: RawAyah[] };
 
 let listCache: SurahMeta[] | null = null;
@@ -67,7 +68,8 @@ export async function getSurah(number: number): Promise<SurahDetail> {
     numberInSurah: item.numberInSurah,
     arab: stripBismillah(item.text, number, item.numberInSurah),
     translation: indonesian.ayahs[index]?.text ?? "",
-    audio: audio.ayahs[index]?.audio ?? ""
+    audio: audio.ayahs[index]?.audio ?? "",
+    juz: item.juz
   }));
   const detail: SurahDetail = {
     meta: {
@@ -83,3 +85,10 @@ export async function getSurah(number: number): Promise<SurahDetail> {
   surahCache.set(number, detail);
   return detail;
 }
+
+// Awal tiap juz (mushaf standar): surah dan nomor ayat.
+export const JUZ_START: { juz: number; surah: number; ayah: number }[] = [
+  [1, 1, 1], [2, 2, 142], [3, 2, 253], [4, 3, 93], [5, 4, 24], [6, 4, 148], [7, 5, 82], [8, 6, 111], [9, 7, 88], [10, 8, 41],
+  [11, 9, 93], [12, 11, 6], [13, 12, 53], [14, 15, 1], [15, 17, 1], [16, 18, 75], [17, 21, 1], [18, 23, 1], [19, 25, 21], [20, 27, 56],
+  [21, 29, 46], [22, 33, 31], [23, 36, 28], [24, 39, 32], [25, 41, 47], [26, 46, 1], [27, 51, 31], [28, 58, 1], [29, 67, 1], [30, 78, 1]
+].map(([juz, surah, ayah]) => ({ juz, surah, ayah }));
