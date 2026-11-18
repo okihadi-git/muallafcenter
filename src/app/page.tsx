@@ -7,6 +7,7 @@ import {
 } from "lucide-react";
 import PrayerSchedule from "@/components/PrayerSchedule";
 import PrayerTracker from "@/components/PrayerTracker";
+import QuranView from "@/components/QuranView";
 
 const nav = [
   { label: "Beranda", icon: Home },
@@ -37,6 +38,10 @@ export default function HomePage() {
         </button>
       </header>
 
+      {active === "Quran" ? (
+        <QuranView />
+      ) : (
+        <>
       <section className="px-5">
         <div className="mb-4 flex items-end justify-between">
           <div>
@@ -98,6 +103,8 @@ export default function HomePage() {
           <ArrowRight size={17} className="shrink-0 text-slate-400"/>
         </button>
       </section>
+        </>
+      )}
 
       <nav className="safe-bottom fixed bottom-0 left-1/2 z-30 flex w-full max-w-md -translate-x-1/2 items-end justify-around border-t border-slate-100/90 bg-white/95 px-3 pt-2.5 shadow-[0_-8px_30px_rgba(20,45,35,.045)] backdrop-blur-xl">
         {nav.map(({ label, icon: Icon }) => {
