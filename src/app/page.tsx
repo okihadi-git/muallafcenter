@@ -84,7 +84,7 @@ export default function HomePage() {
         </div>
         <div className="rounded-[22px] border border-[#eee9dc] bg-[#fffefa] p-4 shadow-[0_5px_20px_rgba(65,54,30,.035)]">
           <div className="mb-3 flex items-center justify-between"><span className="rounded-full bg-[#f6f1e5] px-2.5 py-1 text-[10px] font-semibold text-[#96743a]">PENGUAT HATI</span><span className="text-[10px] text-slate-400">QS. Al-Insyirah: 5</span></div>
-          <p className="text-right font-serif text-[27px] leading-[1.9] text-forest-900" dir="rtl">فَإِنَّ مَعَ الْعُسْرِ يُسْرًا</p>
+          <p className="text-right font-quran text-[27px] leading-[1.9] text-forest-900" dir="rtl">فَإِنَّ مَعَ الْعُسْرِ يُسْرًا</p>
           <p className="mt-3 text-[13px] font-semibold leading-6 text-forest-900">“Maka sesungguhnya bersama kesulitan ada kemudahan.”</p>
           <p className="mt-1 text-[11px] leading-5 text-slate-400">Pengingat bahwa selalu ada harapan di setiap proses.</p>
         </div>

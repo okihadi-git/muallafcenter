@@ -1,5 +1,8 @@
 import type { Metadata, Viewport } from "next";
+import { Amiri_Quran } from "next/font/google";
 import "./globals.css";
+
+const quranFont = Amiri_Quran({ subsets: ["arabic"], weight: "400", display: "swap", variable: "--font-quran" });
 
 export const metadata: Metadata = {
   title: "HijrahApp — Bertumbuh dalam Iman",
@@ -12,5 +15,5 @@ export const viewport: Viewport = {
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
-  return <html lang="id"><body>{children}</body></html>;
+  return <html lang="id" className={quranFont.variable}><body>{children}</body></html>;
 }
