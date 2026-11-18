@@ -48,7 +48,7 @@ export default function PrayerSchedule() {
   }, []);
 
   const nextPrayer = useMemo(() => getNextPrayer(prayers, now), [prayers, now]);
-  const countdown = nextPrayer ? formatCountdown(nextPrayer.remainingMinutes, now) : "--:--:--";
+  const countdown = nextPrayer ? formatCountdown(nextPrayer.remainingMinutes) : "--:--:--";
 
   return (
     <div className="rounded-[26px] border border-slate-100 bg-white p-4 shadow-soft">
